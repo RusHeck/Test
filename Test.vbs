@@ -12,3 +12,10 @@ For Each objSound In objService.ExecQuery("SELECT * FROM Win32_SoundDevice")
 	WScript.Echo objSound.DeviceID 'идентификатор устройства
 	WScript.Echo objSound.SystemName 'имя компьютера
 Next
+For Each objPnP In objService.ExecQuery("SELECT * FROM Win32_PnPEntity")
+	WScript.Echo objPnP.Name 'наименование устройства
+	WScript.Echo objPnP.Description 'описание устройства
+	WScript.Echo objPnP.Manufacturer 'производитель
+	WScript.Echo objPnP.PNPDeviceID 'идентификатор логического устройства
+	WScript.Echo
+Next
